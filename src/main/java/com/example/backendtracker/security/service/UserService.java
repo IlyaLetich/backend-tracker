@@ -21,7 +21,5 @@ public class UserService {
     public void registerUser(UserRegistrationRequestDTO userRegistrationRequest, String sql) {
         String encryptedPassword = bCryptPasswordEncoder.encode(userRegistrationRequest.password());
         jdbcTemplate.update(sql,userRegistrationRequest.id(), userRegistrationRequest.username(), encryptedPassword);
-
-
     }
 }
